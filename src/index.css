@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+/* ============================================
+   KESARIYA DESIGN SYSTEM
+   Material Design 3 Palette + Custom Tokens
+   ============================================ */
+
+@theme {
+  /* ---- Primary Colors ---- */
+  --color-primary: #755b00;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #f4c430;
+  --color-on-primary-container: #695200;
+  --color-primary-fixed: #ffdf90;
+  --color-primary-fixed-dim: #f0c12c;
+  --color-on-primary-fixed: #241a00;
+  --color-on-primary-fixed-variant: #584400;
+  --color-inverse-primary: #f0c12c;
+
+  /* ---- Secondary Colors ---- */
+  --color-secondary: #735c00;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed65b;
+  --color-on-secondary-container: #745c00;
+  --color-secondary-fixed: #ffe088;
+  --color-secondary-fixed-dim: #e9c349;
+  --color-on-secondary-fixed: #241a00;
+  --color-on-secondary-fixed-variant: #574500;
+
+  /* ---- Tertiary Colors ---- */
+  --color-tertiary: #77574d;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #eac1b5;
+  --color-on-tertiary-container: #6c4e44;
+  --color-tertiary-fixed: #ffdbd0;
+  --color-tertiary-fixed-dim: #e7bdb1;
+  --color-on-tertiary-fixed: #2c160e;
+  --color-on-tertiary-fixed-variant: #5d4037;
+
+  /* ---- Surface Colors ---- */
+  --color-surface: #fff8f1;
+  --color-on-surface: #1f1b12;
+  --color-surface-variant: #ebe1d2;
+  --color-on-surface-variant: #4e4634;
+  --color-surface-tint: #755b00;
+  --color-surface-bright: #fff8f1;
+  --color-surface-dim: #e2d9ca;
+  --color-surface-container: #f6eddd;
+  --color-surface-container-low: #fcf2e3;
+  --color-surface-container-high: #f1e7d7;
+  --color-surface-container-highest: #ebe1d2;
+  --color-surface-container-lowest: #ffffff;
+  --color-inverse-surface: #353025;
+  --color-inverse-on-surface: #f9f0e0;
+
+  /* ---- Error Colors ---- */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* ---- Outline Colors ---- */
+  --color-outline: #807661;
+  --color-outline-variant: #d1c5ad;
+
+  /* ---- Background ---- */
+  --color-background: #fff8f1;
+  --color-on-background: #1f1b12;
+
+  /* ---- Success (custom addition) ---- */
+  --color-success: #1b6d2e;
+  --color-on-success: #ffffff;
+  --color-success-container: #a4f5a1;
+
+  /* ---- Spacing ---- */
+  --spacing-xs: 4px;
+  --spacing-sm: 12px;
+  --spacing-base: 8px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+
+  /* ---- Font Families ---- */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
+
+  /* ---- Font Sizes ---- */
+  --text-display-lg: 56px;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 1.4;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 1.2;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 600;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 1.2;
+  --text-label-sm--font-weight: 500;
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Hide scrollbar for horizontal scroll containers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Material Symbols filled variant */
+.material-filled {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Smooth section transitions */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Stagger animation delays for children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
