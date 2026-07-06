@@ -1,13 +1,13 @@
 import { images, barDrinks } from "../../data/siteData";
+import Image from "../ui/Image";
 
 export default function LoungeBar() {
   return (
     <div className="px-4 md:px-[var(--spacing-md)]">
       <div className="bg-inverse-surface text-inverse-on-surface rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 shadow-lg">
-        <img
+        <Image
           src={images.bar}
           alt="The Lounge Bar at Kesariya — sophisticated cocktail bar with warm amber lighting"
-          loading="lazy"
           decoding="async"
           width={640}
           height={400}

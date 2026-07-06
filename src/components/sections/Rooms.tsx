@@ -1,5 +1,6 @@
 import { images, roomAmenities } from "../../data/siteData";
 import Button from "../ui/Button";
+import Image from "../ui/Image";
 
 export default function Rooms() {
   return (
@@ -52,10 +53,9 @@ export default function Rooms() {
 
         {/* Image */}
         <div className="md:col-span-7 h-60 md:h-[600px] rounded-2xl overflow-hidden shadow-lg z-10">
-          <img
+          <Image
             src={images.room}
             alt="Luxurious hotel room at Kesariya with premium bedding and modern amenities"
-            loading="lazy"
             decoding="async"
             width={896}
             height={600}

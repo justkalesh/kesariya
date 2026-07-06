@@ -2,6 +2,7 @@ import { images, banquetFeatures } from "../../data/siteData";
 import SectionHeading from "../ui/SectionHeading";
 import FeatureItem from "../ui/FeatureItem";
 import Button from "../ui/Button";
+import Image from "../ui/Image";
 
 export default function Banquets() {
   return (
@@ -34,16 +35,16 @@ export default function Banquets() {
           </div>
 
           {/* Image */}
-          <div
-            className="order-1 md:order-2 h-52 md:h-[500px] bg-surface-dim rounded-xl overflow-hidden shadow-lg"
-            style={{
-              backgroundImage: `url('${images.banquet}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            role="img"
-            aria-label="A grand, lavishly decorated banquet hall set for a wedding reception at Kesariya"
-          />
+          <div className="order-1 md:order-2 h-52 md:h-[500px] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src={images.banquet}
+              alt="A grand, lavishly decorated banquet hall set for a wedding reception at Kesariya"
+              decoding="async"
+              width={800}
+              height={500}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

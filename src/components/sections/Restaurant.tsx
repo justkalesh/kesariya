@@ -1,5 +1,6 @@
 import { images } from "../../data/siteData";
 import SectionHeading from "../ui/SectionHeading";
+import Image from "../ui/Image";
 
 export default function Restaurant() {
   return (
@@ -22,10 +23,9 @@ export default function Restaurant() {
       {/* Ambience Masonry */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-[var(--spacing-md)]">
         <div className="rounded-xl overflow-hidden shadow-sm">
-          <img
+          <Image
             src={images.ambienceLeft}
             alt="Kesariya restaurant warm ambience with traditional Indian decor"
-            loading="lazy"
             decoding="async"
             width={640}
             height={384}
@@ -33,10 +33,9 @@ export default function Restaurant() {
           />
         </div>
         <div className="rounded-xl overflow-hidden shadow-sm">
-          <img
+          <Image
             src={images.ambienceRight}
             alt="Kesariya restaurant interior details and elegant table settings"
-            loading="lazy"
             decoding="async"
             width={640}
             height={384}

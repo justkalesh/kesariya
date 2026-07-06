@@ -1,5 +1,6 @@
 import { images } from "../../data/siteData";
 import Button from "../ui/Button";
+import Image from "../ui/Image";
 
 export default function Hero() {
   return (
@@ -9,7 +10,7 @@ export default function Hero() {
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src={images.hero}
           alt="Kesariya Restaurant, Banquet & Hotel — grand exterior view in Gorakhpur showing the iconic logo"
           className="w-full h-full object-cover object-top"
