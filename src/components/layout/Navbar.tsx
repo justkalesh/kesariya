@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { navLinks, images } from "../../data/siteData";
 import { useScrollSpy } from "../../hooks/useScrollSpy";
 import MobileMenu from "./MobileMenu";
@@ -6,6 +7,9 @@ import MobileMenu from "./MobileMenu";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
   const activeId = useScrollSpy(sectionIds, 120);
@@ -26,11 +30,30 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
     setMobileOpen(false);
+
+    // If it's a menu link
+    if (href === "/menu") {
+      navigate("/menu");
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    // It's a hash link
+    const id = href.replace("#", "");
+    
+    if (location.pathname !== "/") {
+      // If we are on another page, go home first, then scroll
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      // Already on home, just scroll
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -57,10 +80,11 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-[var(--spacing-md)] font-[var(--font-body)] text-sm font-semibold tracking-[0.05em]">
+          <div className="hidden md:flex gap-[var(--spacing-md)] font-[var(--font-body)] text-sm font-semibold tracking-[0.05em] items-center">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
-              const isActive = activeId === id;
+              // Active state only applies on home page
+              const isActive = location.pathname === "/" && activeId === id;
               return (
                 <a
                   key={link.href}
@@ -76,6 +100,18 @@ export default function Navbar() {
                 </a>
               );
             })}
+            {/* Added Menu Link */}
+            <a
+              href="/menu"
+              onClick={(e) => handleNavClick(e, "/menu")}
+              className={`cursor-pointer transition-all duration-300 active:scale-95 pb-1 ${
+                location.pathname === "/menu"
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-on-surface-variant hover:text-primary border-b-2 border-transparent"
+              }`}
+            >
+              Menu
+            </a>
           </div>
 
           {/* Desktop CTA — "Contact Now" */}
@@ -104,7 +140,7 @@ export default function Navbar() {
       {/* Mobile Menu Drawer */}
       <MobileMenu
         isOpen={mobileOpen}
-        activeId={activeId}
+        activeId={location.pathname === "/" ? activeId : ""}
         onNavClick={handleNavClick}
         onClose={() => setMobileOpen(false)}
       />

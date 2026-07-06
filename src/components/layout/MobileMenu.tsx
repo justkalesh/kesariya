@@ -72,6 +72,18 @@ export default function MobileMenu({
               </a>
             );
           })}
+          {/* Menu Link */}
+          <a
+            href="/menu"
+            onClick={(e) => onNavClick(e, "/menu")}
+            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+              window.location.pathname === "/menu"
+                ? "bg-primary-container text-on-primary-container"
+                : "text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"
+            }`}
+          >
+            Menu
+          </a>
         </nav>
 
         {/* CTA */}
