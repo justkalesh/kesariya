@@ -12,8 +12,14 @@ export default function SchemaMarkup() {
         name: "Kesariya Restaurant Banquet & Hotel",
         alternateName: "Kesariya",
         url: "https://kesariya.in",
+        telephone: "+918881013100",
         image: [
           "https://kesariya.in/og-image.jpg",
+        ],
+        sameAs: [
+          "https://www.facebook.com/share/19CjreqU8i/?mibextid=wwXIfr",
+          "https://www.instagram.com/kesariyarestaurent_/",
+          "https://wa.me/918881013100",
         ],
         description:
           "Kesariya offers exceptional dining, grand banquet halls for weddings and events, and luxurious hotel rooms in Gorakhpur, Uttar Pradesh.",
@@ -116,6 +122,13 @@ export default function SchemaMarkup() {
           { "@type": "LocationFeatureSpecification", name: "Restaurant", value: true },
           { "@type": "LocationFeatureSpecification", name: "Bar", value: true },
         ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+918881013100",
+          contactType: "reservations",
+          areaServed: "IN",
+          availableLanguage: ["Hindi", "English"],
+        },
       },
       {
         "@type": "WebSite",

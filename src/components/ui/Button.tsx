@@ -37,29 +37,32 @@ export default function Button({
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!href) return;
-    
-    // Prevent default anchor behavior to keep URL clean
-    e.preventDefault();
 
-    if (href.startsWith("/")) {
-      navigate(href);
-      window.scrollTo(0, 0);
-      return;
-    }
+    if (href.startsWith("/") || href.startsWith("#")) {
+      // Prevent default anchor behavior for internal links to keep URL clean
+      e.preventDefault();
 
-    if (href.startsWith("#")) {
-      const id = href.replace("#", "");
-      if (location.pathname !== "/") {
-        navigate("/");
-        setTimeout(() => {
+      if (href.startsWith("/")) {
+        navigate(href);
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      if (href.startsWith("#")) {
+        const id = href.replace("#", "");
+        if (location.pathname !== "/") {
+          navigate("/");
+          setTimeout(() => {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        } else {
           const el = document.getElementById(id);
           if (el) el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      } else {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
+    // If it's an external link (like tel:, mailto:, https:), do not prevent default.
   };
 
   if (href) {

@@ -29,7 +29,7 @@ export default function Banquets() {
                 />
               ))}
             </ul>
-            <Button href="#contact" className="self-start mt-2 text-sm">
+            <Button href="https://wa.me/918881013100" target="_blank" rel="noopener noreferrer" className="self-start mt-2 text-sm">
               Inquire Now
             </Button>
           </div>

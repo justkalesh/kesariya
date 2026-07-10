@@ -1,24 +1,31 @@
+import MenuBook from "../components/menu/MenuBook";
 import Button from "../components/ui/Button";
 
-export default function MenuWIP() {
+export default function Menu() {
   return (
-    <main className="min-h-[70vh] flex flex-col items-center justify-center bg-surface pt-24 px-4 text-center">
-      <div className="max-w-2xl mx-auto space-y-6">
-        <span className="material-symbols-outlined text-[64px] md:text-[80px] text-primary">
-          restaurant_menu
-        </span>
-        <h1 className="font-[var(--font-display)] text-3xl md:text-5xl font-bold text-primary">
-          Menu Coming Soon
-        </h1>
-        <p className="font-[var(--font-body)] text-base md:text-lg text-on-surface-variant">
-          We are currently curating an exquisite digital menu experience for you. Please check back later or visit us to explore our culinary offerings in person.
-        </p>
-        <div className="pt-6">
-          <Button href="/" variant="filled">
-            Return to Home
+    <main className="min-h-[110vh] bg-surface pt-20 md:pt-24 pb-20 px-2 md:px-4">
+      <div className="max-w-[1100px] mx-auto w-full">
+        {/* Header */}
+        <div className="text-center mb-4 md:mb-6">
+          <h1 className="font-[var(--font-display)] text-2xl md:text-4xl font-bold text-primary mb-1">
+            Our Menu
+          </h1>
+          <p className="font-[var(--font-body)] text-sm md:text-base text-on-surface-variant">
+            Flip through our curated selection of dishes & drinks
+          </p>
+        </div>
+
+        {/* Book Viewer */}
+        <MenuBook />
+
+        {/* Back to home */}
+        <div className="text-center mt-6">
+          <Button href="/" variant="outlined" className="text-sm">
+            ← Back to Home
           </Button>
         </div>
       </div>
     </main>
   );
 }
+

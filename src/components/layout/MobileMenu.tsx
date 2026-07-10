@@ -89,8 +89,7 @@ export default function MobileMenu({
         {/* CTA */}
         <div className="px-[var(--spacing-md)] pb-[var(--spacing-lg)]">
           <a
-            href="#contact"
-            onClick={(e) => onNavClick(e, "#contact")}
+            href="tel:+918881013100"
             className="flex items-center justify-center gap-2 w-full bg-primary-container text-on-primary-container px-[var(--spacing-md)] py-3 rounded-full font-[var(--font-body)] text-sm font-semibold tracking-[0.05em] hover:bg-secondary-container transition-colors shadow-sm"
           >
             Contact Now

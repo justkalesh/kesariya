@@ -43,7 +43,7 @@ export default function Rooms() {
           </div>
 
           <Button
-            href="#contact"
+            href="tel:+918881013100"
             variant="tonal"
             className="w-max mt-3 md:mt-[var(--spacing-md)] text-sm"
           >

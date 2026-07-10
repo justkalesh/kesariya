@@ -116,8 +116,7 @@ export default function Navbar() {
 
           {/* Desktop CTA — "Contact Now" */}
           <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "#contact")}
+            href="tel:+918881013100"
             className="hidden md:inline-flex bg-primary-container text-on-primary-container px-[var(--spacing-md)] py-[var(--spacing-sm)] rounded-full font-[var(--font-body)] text-sm font-semibold tracking-[0.05em] hover:bg-secondary-container transition-colors shadow-sm items-center gap-[var(--spacing-xs)] active:scale-95"
           >
             Contact Now

@@ -156,6 +156,37 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom golden scrollbar — desktop only */
+@media (min-width: 768px) {
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-container) var(--color-surface-container);
+  }
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--color-surface-container);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-container);
+    border-radius: 4px;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary);
+  }
+}
+
+/* Hide scrollbar on mobile globally — menu page overrides with .show-scrollbar */
+@media (max-width: 767px) {
+  body:not(.show-scrollbar) {
+    scrollbar-width: none;
+  }
+  body:not(.show-scrollbar)::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* ============================================
    UTILITY CLASSES
    ============================================ */
@@ -167,6 +198,35 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Force scrollbar always visible (menu page) */
+.show-scrollbar {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-container) var(--color-surface-container);
+}
+.show-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  display: block !important;
+}
+.show-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-surface-container);
+}
+.show-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-container);
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+/* Hide scrollbar completely (fullscreen mode) */
+.no-scrollbar {
+  overflow: hidden !important;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Material Symbols filled variant */
@@ -253,5 +313,74 @@ section {
 
 .animate-marquee-slow {
   animation: marquee 45s linear infinite;
+}
+
+/* ============================================
+   BOOK PAGE-FLIP ANIMATIONS
+   ============================================ */
+
+@keyframes bookOpen {
+  0% {
+    transform: perspective(2000px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(2000px) rotateY(-30deg);
+  }
+  100% {
+    transform: perspective(2000px) rotateY(0deg);
+  }
+}
+
+@keyframes pageFlipRight {
+  0% {
+    transform: perspective(2000px) rotateY(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: perspective(2000px) rotateY(-15deg);
+    opacity: 0.8;
+  }
+  60% {
+    transform: perspective(2000px) rotateY(5deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: perspective(2000px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes pageFlipLeft {
+  0% {
+    transform: perspective(2000px) rotateY(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: perspective(2000px) rotateY(15deg);
+    opacity: 0.8;
+  }
+  60% {
+    transform: perspective(2000px) rotateY(-5deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: perspective(2000px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-book-open {
+  animation: bookOpen 0.5s ease-in-out;
+  transform-origin: left center;
+}
+
+.animate-page-flip-right {
+  animation: pageFlipRight 0.5s ease-in-out;
+  transform-origin: left center;
+}
+
+.animate-page-flip-left {
+  animation: pageFlipLeft 0.5s ease-in-out;
+  transform-origin: right center;
 }
 
