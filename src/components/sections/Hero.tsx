@@ -28,8 +28,18 @@ export default function Hero() {
         <h1 className="font-[var(--font-display)] text-[clamp(32px,8vw,56px)] font-bold leading-[1.1] tracking-[-0.02em] text-primary mb-2 md:mb-[var(--spacing-sm)]">
           KESARIYA
         </h1>
+
+        {/* Pure Veg Indicator */}
+        <div className="flex items-center justify-center gap-2 mb-4 md:mb-6">
+          <div className="flex items-center justify-center w-5 h-5 border-2 border-green-700 rounded-sm">
+            <div className="w-2.5 h-2.5 bg-green-700 rounded-full"></div>
+          </div>
+          <span className="text-green-700 font-[var(--font-body)] font-bold tracking-widest text-sm md:text-base">
+            PURE VEG
+          </span>
+        </div>
         <p className="font-[var(--font-body)] text-sm md:text-[18px] leading-relaxed text-on-surface mb-8 md:mb-[var(--spacing-lg)]">
-          Restaurant • Banquet • Hotel | Exceptional dining, grand celebrations,
+          Stay · Celebrate · Dine | Exceptional dining, grand celebrations,
           and luxurious stays in Gorakhpur.
         </p>
         <Button href="#restaurant" variant="filled" className="shadow-md text-sm md:text-[14px]">

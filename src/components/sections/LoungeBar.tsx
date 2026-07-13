@@ -18,7 +18,7 @@ export default function LoungeBar() {
             The Lounge Bar
           </h3>
           <p className="font-[var(--font-body)] text-sm md:text-base leading-relaxed opacity-90 mb-4 md:mb-[var(--spacing-lg)]">
-            Sophisticated cocktails and premium spirits in an intimate setting.
+            Refreshing mocktails, creamy shakes, and premium coffees in an intimate setting.
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 md:gap-x-[var(--spacing-md)] gap-y-2 md:gap-y-[var(--spacing-sm)] font-[var(--font-body)] text-xs md:text-sm font-semibold tracking-[0.05em]">

@@ -49,16 +49,16 @@ export interface BarDrink {
 }
 
 export const barDrinks: BarDrink[] = [
-  { name: "Classic Mojito" },
-  { name: "Old Fashioned" },
-  { name: "Whiskey Sour" },
-  { name: "Cosmopolitan" },
-  { name: "Pina Colada" },
-  { name: "Margarita" },
-  { name: "Long Island" },
-  { name: "Daiquiri" },
-  { name: "Negroni" },
-  { name: "Mai Tai" },
+  { name: "Virgin Mojito" },
+  { name: "Blue Lagoon" },
+  { name: "Blue Berry" },
+  { name: "Kala Khatta" },
+  { name: "Green Apple" },
+  { name: "Watermelon" },
+  { name: "Fresh Lime Soda" },
+  { name: "KitKat Shake" },
+  { name: "Mango Shake" },
+  { name: "Cold Coffee" },
 ];
 
 export interface NavLink {
